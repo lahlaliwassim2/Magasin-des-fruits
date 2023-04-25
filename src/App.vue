@@ -5,6 +5,15 @@
   </nav>
   <router-view/>
 </template>
+<script>
+
+export default {
+  mounted() {
+    this.$store.commit('UpdateFromLocalStorage')
+  },
+}
+</script>
+
 
 <style lang="scss">
 #app {
