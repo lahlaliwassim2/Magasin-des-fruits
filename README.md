@@ -1,18 +1,24 @@
-# Magasin-des-fruits
-Je suis  en train de développer un marché en utilisant Vue , mon magasin en ligne propose une variété de fruits et permet aux utilisateurs d'ajouter ou de supprimer des articles de leur panier. Pour assurer le bon fonctionnement de l'application, je dois  inclure des éléments tels que des :
+# hello-world
 
-      directives
+## Project setup
+```
+npm install
+```
 
-      Vuex Store
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-      mutations
+### Compiles and minifies for production
+```
+npm run build
+```
 
-      actions
+### Lints and fixes files
+```
+npm run lint
+```
 
-      getters
-
-      Computed properties and Watcher
-
-      Class and Style Bindings 
-
-      Input Bindings . 
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
