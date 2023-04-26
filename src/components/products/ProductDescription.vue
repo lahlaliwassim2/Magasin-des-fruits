@@ -48,12 +48,15 @@
             },
              description() {
                 return this.product.descrption.substring(0, 150)
+            },
+            image() {
+                return this.product.image
             }
         }
     }
 </script>
-<style lang="scss">
-.drawer-background{
+<style>
+.drawer-background {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -63,27 +66,29 @@
     z-index: 100;
     display: none;
     transition: display .5s;
-
-    &.show {
-        display : block;
-    }
 }
+
+.drawer-background.show {
+    display : block;
+}
+
 .drawer {
-   width: 95vw;
+    width: 95vw;
     height: 100vh;
     background-color: #fff;
     position: fixed;
     top:0%;
-    left: -105vw;
+    visibility: hidden;
     padding:15px;
     transition: left .5s;
     z-index: 101;
     overflow: scroll;
-    &.show{
-        left: 0;
-
-    }
 }
+
+.drawer.show {
+    visibility: visible;
+}
+
 .drawer-close {
     font-size: 1.5rem;
     padding: 5px;
@@ -93,36 +98,37 @@
     width: 15px;
     float: right;
     cursor: pointer;
-    &.hover {
-        background-color: lightcoral;
-    }
 }
+
+.drawer-close.hover {
+    background-color: lightcoral;
+}
+
 .product-details {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
-    p.description {
-        padding: 20px;
-        line-height: 1.51rem;
-
-    }
-    .button-container {
-        button {
-            width: 150px;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 0 5px 50px 5px;
-            cursor: pointer;
-
-
-        }
-    }
 }
+
+.product-details p.description {
+    padding: 20px;
+    line-height: 1.51rem;
+}
+
+.button-container button {
+    width: 150px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 5px 50px 5px;
+    cursor: pointer;
+}
+
 @media (min-width: 500px) {
     .drawer {
         width : 500px;
     }
 }
+
+
 </style>
