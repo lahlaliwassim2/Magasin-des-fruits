@@ -10,6 +10,9 @@
     :key="product.id"
     :product="product"
     />
+    <div class="no_t" :v-if=" existOrNo == true">
+      aucun produit existe dans votre panier
+    </div>body
 </div>
 
     <CartPayment 
@@ -32,11 +35,22 @@ export default {
       return this.$store.getters.cartItems;
     },
   },
+  methods: {
+    existOrNo() {
+      if(this.product.lenght <= 0) {
+        return true
+      } return false
+    }
+  }
 };
 </script>
 <style>
 .cartItem {
   display: flex;
-    gap: 51px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
 }
+
+
 </style>
