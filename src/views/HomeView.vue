@@ -48,11 +48,13 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style>
 .product-cards-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 10px;
 }
+
 
 </style>
