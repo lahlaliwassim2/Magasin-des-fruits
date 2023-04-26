@@ -36,7 +36,7 @@
     }
 
     .card img {
-        width: 104%;
+        width: 100%;
         height: 60%;
     }
 
@@ -54,7 +54,6 @@
 
     button.view-product-button {
         padding: 10px;
-        background-color: rgb(79, 160, 187);
         border: none;
         color: wheat;
         font-weight: bold;

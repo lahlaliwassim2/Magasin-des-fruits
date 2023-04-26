@@ -1,14 +1,14 @@
 const items =[
     {
         id: 1,
-        image: "https://www.foodette.fr/wp-content/uploads/2017/08/apple-417924_1920-compressor-1024x656.jpg",
+        image: "https://www.shutterstock.com/image-photo/green-red-apple-small-wagon-260nw-129107447.jpg",
         name: "Pomme",
         price: 2.50,
         descrption: "Une pomme croquante et juteuse, parfaite pour une collation ou une recette de tarte."
     },
     {
         id: 2,
-        image: "https://www.foodette.fr/wp-content/uploads/2017/08/apple-417924_1920-compressor-1024x656.jpg",
+        image: "https://www.shutterstock.com/image-photo/orange-fruit-slices-leaves-isolated-260nw-1386912362.jpg",
         name: "Orange",
         price: 1.80,
         descrption: "Une orange juteuse pleine de vitamine C pour vous donner un coup de fouet énergétique."
@@ -29,21 +29,21 @@ const items =[
     },
     {
         id: 5,
-        image: "https://www.foodette.fr/wp-content/uploads/2017/08/apple-417924_1920-compressor-1024x656.jpg",
+        image: "https://www.shutterstock.com/image-photo/apple-tower-on-wooden-wagon-260nw-2209548281.jpg",
         name: "Fraise",
         price: 4.00,
         descrption: "Des fraises fraîches et sucrées, idéales pour ajouter une touche de couleur à vos desserts."
     },
     {
         id: 6,
-        image: "https://www.foodette.fr/wp-content/uploads/2017/08/apple-417924_1920-compressor-1024x656.jpg",
+        image: "https://www.shutterstock.com/image-photo/big-middle-small-fresh-red-260nw-1225196314.jpg",
         name: "Fruit de la passion",
         price: 2.80,
         descrption: "Un fruit de la passion acidulé et aromatique, parfait pour ajouter une touche d'audace à vos boissons."
     },
     {
         id: 7,
-        image: "https://www.foodette.fr/wp-content/uploads/2017/08/apple-417924_1920-compressor-1024x656.jpg",
+        image: "https://www.shutterstock.com/image-photo/row-strawberries-smallest-largest-on-260nw-1740128438.jpg",
         name: "Mangue",
         price: 3.00,
         descrption: "Une mangue douce et juteuse, parfaite pour ajouter une touche tropicale à vos recettes de salade."

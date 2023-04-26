@@ -1,59 +1,60 @@
 <template>
-    <div class="drawer-background" :class="{show: active}" 
-    @click="$emit('close-product-drawer')"
-    />
-    <div class="drawer" :class="{show: active}">
-        <div class="drawer-close"  @click="$emit('close-product-drawer')">
+    <div class="drawer-background" :class="{ show: active }" @click="$emit('close-product-drawer')" />
+    <div class="drawer" :class="{ show: active }">
+        <div class="drawer-close" @click="$emit('close-product-drawer')">
             X
         </div>
-        
         <div v-if="product" class="product-details">
             <img :src="image" alt="">
             <h3 class="text-center">{{ product.name }}</h3>
             <p class="description">{{ description }}</p>
-            <h3 class="text-center">${{ product.price }}</h3>
-            
+            <h3 class="text-center">{{ product.price }} DH</h3>
+           <div class="flex">
             <div class="cart-total" v-if="product_total">
-                <h3>Q:</h3>
-                <h4>{{product_total}}</h4>
-        </div>
-        <div class="button-container">
-           
-            <button class="remove" @click="removeToCart()">-</button>
-            <button class="add" @click="addToCart()">+</button>
-
-        </div>
+                <h4> Quantitée : {{ product_total }}</h4>
+            </div>
+            <div class="prix-final" v-if="product_total">
+                <h4> prix à payer  : {{ SommePrix }}</h4>
+            </div>
+           </div>
+            <div class="button-container">
+                <button class="remove" @click="removeToCart()">-</button>
+                <button class="add" @click="addToCart()">+</button>
+            </div>
         </div>
     </div>
-  
 </template>
 <script>
-    export default {
-        
-        props: [
-            'product',
-            'active'
-        ],
-        methods: {
-            addToCart() {
-                this.$store.commit('addToCart', this.product)
-            },
-            removeToCart() {
-                this.$store.commit('removeCart', this.product)
-            }
+export default {
+
+    props: [
+        'product',
+        'active'
+    ],
+    methods: {
+        addToCart() {
+            this.$store.commit('addToCart', this.product)
         },
-        computed: {
-            product_total() {
-             return   this.$store.getters.productQuantity(this.product)
-            },
-             description() {
-                return this.product.descrption.substring(0, 150)
-            },
-            image() {
-                return this.product.image
-            }
+        removeToCart() {
+            this.$store.commit('removeCart', this.product)
+        }
+    },
+    computed: {
+        product_total() {
+            return this.$store.getters.productQuantity(this.product)
+        },
+        description() {
+            return this.product.descrption.substring(0, 150)
+        },
+        image() {
+            return this.product.image
+        },
+        SommePrix() {
+            const quant = this.$store.getters.productQuantity(this.product)
+            return quant * this.product.price
         }
     }
+}
 </script>
 <style>
 .drawer-background {
@@ -62,24 +63,27 @@
     position: fixed;
     left: 0;
     top: 0;
-    background-color: rgba(134, 124, 124,0.55);
+    background-color: rgba(134, 124, 124, 0.55);
     z-index: 100;
     display: none;
     transition: display .5s;
 }
 
 .drawer-background.show {
-    display : block;
+    display: block;
 }
-
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
 .drawer {
     width: 95vw;
     height: 100vh;
     background-color: #fff;
     position: fixed;
-    top:0%;
+    top: 0%;
     visibility: hidden;
-    padding:15px;
+    padding: 15px;
     transition: left .5s;
     z-index: 101;
     overflow: scroll;
@@ -126,9 +130,7 @@
 
 @media (min-width: 500px) {
     .drawer {
-        width : 500px;
+        width: 500px;
     }
 }
-
-
 </style>
