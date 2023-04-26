@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-gray-900">
         <div>le prix que vous devais payées : </div>
         <div>{{test}}</div>
     </div>
