@@ -1,15 +1,16 @@
 <template>
-  <div>
+  <div class="cart ">
     <h1>My Cart</h1>
     <!-- <div v-for="product in items" :key="product.id">
       {{ product.name }}
     </div> -->
+    <div class="cartItem">
     <CartItems 
     v-for="(product) in items" 
     :key="product.id"
     :product="product"
     />
-
+</div>
 
     <CartPayment 
       :product="product"
@@ -33,3 +34,9 @@ export default {
   },
 };
 </script>
+<style>
+.cartItem {
+  display: flex;
+    gap: 51px;
+}
+</style>
