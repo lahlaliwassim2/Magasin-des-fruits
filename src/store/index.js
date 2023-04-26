@@ -14,12 +14,10 @@ export default createStore({
       else return null
     },
     cartItems: state => {
-      return state.cart
-      
+      return state.cart   
     },
     SomePrixTotal :state => {
       return state.cart.reduce((a, b) => a+ (b.price * b.quantity), 0)
-       
     }
    
   },
@@ -42,6 +40,12 @@ export default createStore({
         state.cart = JSON.parse(cart)
       }
     },
+    deleteProductFromCart(state, product) {
+      let item = state.cart.find(i => i.id === product.id)
+      item.quantity = null
+      state.cart = state.cart.filter(i=>i.id != item.id)
+      updateLocalStorage(state.cart)
+    }
   
   },
   actions: {
