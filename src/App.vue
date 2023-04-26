@@ -1,21 +1,25 @@
 <template>
-  <nav>
-    <router-link  :class="{active: $route.name ==  'Home'}" to="/">Home</router-link> |
-    <router-link  :class="{active: $route.name == 'Cart'}" to="/cart">Cart</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <NavbarView />
+    <router-view />
+  </div>
 </template>
+
 <script>
+import NavbarView from './components/NavbarView.vue'
 
 export default {
+  name: 'App',
+  components: {
+    NavbarView
+  },
   mounted() {
     this.$store.commit('UpdateFromLocalStorage')
   },
 }
 </script>
 
-
-<style lang="scss">
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,27 +36,12 @@ html, body {
 body {
   background-color: rgb(245, 245, 245);
 }
-#nav{
-  padding: 10px;
-  width: 100%;
-  height: 30px;
-  border-color: aqua;
-  line-height: 30px;
-
-  a{
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-    margin: 0 5px 0 5px;
-    font-size: 1.25rem;
-
-    }
-  }
 
 
 .active {
-      color: blue;
+  color: blue;
 }
+
 .text-center {
   text-align: center;
 }
