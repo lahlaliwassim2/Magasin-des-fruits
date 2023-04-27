@@ -46,7 +46,6 @@ export default createStore({
       state.cart = state.cart.filter(i=>i.id != item.id)
       updateLocalStorage(state.cart)
     }
-  
   },
   actions: {
   },
