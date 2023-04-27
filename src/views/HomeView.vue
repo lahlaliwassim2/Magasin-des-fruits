@@ -37,7 +37,7 @@ export default {
       active: {
         product_drawer: false,
       },
-      produits : "Produts"
+      produits : "PRODUITS"
     }
   },
   methods: {
