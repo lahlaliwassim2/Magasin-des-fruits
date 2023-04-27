@@ -73,4 +73,9 @@ export default {
 .titre {
   font-size: 25px;
 }
+@media (max-width: 500px) {
+    .cartItem {
+       display: block;
+    }
+}
 </style>
