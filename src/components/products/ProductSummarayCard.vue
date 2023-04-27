@@ -10,8 +10,12 @@
     <div class="product-card">
 		<div class="product-tumb">
 			<img :src="image" alt="image_fruit" style="width:100%;">
+            <div class="abs" v-show="PrixHaut">
+                <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/fire.png" style="width: 20px;" alt="">
+            </div>
 		</div>
 		<div class="product-details">
+          
 			<h4>{{ product.name }}</h4>
 			<p>{{ description }}</p>
 			<div class="product-bottom-details">
@@ -31,6 +35,10 @@ export default {
         },
         image() {
             return this.product.image
+        },
+        PrixHaut() {
+            if(this.product.price > 10 ) return true
+            else return false
         }
     }
 }
@@ -51,6 +59,7 @@ export default {
     justify-content: center;
     height: 300px;
     background: #f0f0f0;
+    position: relative;
 }
 .product-tumb img {
     max-width: 100%;
@@ -58,6 +67,11 @@ export default {
 }
 .product-details {
     padding: 30px;
+}
+.abs {
+    position: absolute;
+    left: 0;
+    top: 5%;
 }
 .product-details h4  {
     font-weight: 500;
