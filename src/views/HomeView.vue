@@ -6,6 +6,8 @@
    v-on:close-product-drawer="closeproduct()"
    />
 
+
+    <BannerView />
     <div class="product-cards-container">
       <ProductSummarayCard
        v-for="product in items"
@@ -14,19 +16,21 @@
       v-on:view-product="viewProduct($event)"
        />
     </div>
-  </div>
+    </div>
 </template>
 
 <script>
 import items from '../data/items.js'
 import ProductDescription from '../components/products/ProductDescription.vue'
 import ProductSummarayCard from '../components/products/ProductSummarayCard.vue'
+import BannerView from '../components/BannerView.vue'
 export default {
   name: 'HomeView',
   components: {
     ProductSummarayCard,
-    ProductDescription
-  },
+    ProductDescription,
+    BannerView
+},
   data () {
     return {
       items: items,
@@ -51,8 +55,8 @@ export default {
 <style>
 .product-cards-container {
   display: flex;
+  justify-content: start;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   gap: 10px;
 }
 
