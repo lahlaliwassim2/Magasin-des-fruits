@@ -5,9 +5,8 @@
    :active="active.product_drawer"
    v-on:close-product-drawer="closeproduct()"
    />
-
-
-    <BannerView />
+    <BannerView 
+     :titre="produits"/>
     <div class="product-cards-container">
       <ProductSummarayCard
        v-for="product in items"
@@ -37,7 +36,8 @@ export default {
       product: null,
       active: {
         product_drawer: false,
-      }
+      },
+      produits : "Produts"
     }
   },
   methods: {
@@ -52,6 +52,7 @@ export default {
   }
 }
 </script>
+
 <style>
 .product-cards-container {
   display: flex;
@@ -59,6 +60,4 @@ export default {
   flex-wrap: wrap;
   gap: 10px;
 }
-
-
 </style>
