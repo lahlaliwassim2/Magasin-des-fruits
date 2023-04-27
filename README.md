@@ -13,6 +13,13 @@ IMAGES
 
 ![screencapture-localhost-8082-2023-04-27-20_17_54](https://user-images.githubusercontent.com/93933524/234969745-1b5c047f-3077-488b-848a-3feda377c2d8.png)
 
+
+AJOUTER DANS MON PANIER 
+
+
+![screencapture-localhost-8082-cart-2023-04-27-20_20_58](https://user-images.githubusercontent.com/93933524/234970277-25a829c9-a56f-43ea-bb30-b6d287703068.png)
+
+
 MOBILE 
 
 
