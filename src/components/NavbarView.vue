@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link :class="{active: $route.name == 'Home'}" to="/">MAGASIN</router-link> 
-    <router-link :class="{active: $route.name == 'Cart'}" to="/cart">
+    <router-link :class="{col: $route.name == 'Home'}" to="/">MAGASIN</router-link> 
+    <router-link :class="{col: $route.name == 'Cart'}" to="/cart">
       <i class="bi bi-cart-fill"></i>
     </router-link>
   </nav>
@@ -16,12 +16,13 @@ export default {
 <style>
 nav {
   padding: 10px;
-  width: 100%;
+  width: 99%;
   height: 30px;
   border-color: aqua;
   line-height: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 nav a {
@@ -32,7 +33,7 @@ nav a {
   font-size: 1.25rem;
 }
 
-.active {
-  color: blue;
+.col {
+  color: #eb8755;
 }
 </style>
