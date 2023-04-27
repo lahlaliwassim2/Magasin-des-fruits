@@ -12,23 +12,38 @@
     :key="product.id"
     :product="product"
     />
+   
 </div>
+<div v-if="items.length <= 0">
+      <ErrorView 
+      :message="err "
+    />
+    </div>
     <CartPayment 
       :product="product"
     />
+    
   </div>
+
 </template>
 <script>
 
 import BannerView from '@/components/BannerView.vue';
 import CartItems from '../components/cart/CartItem.vue'
 import CartPayment from '../components/cart/CartPayment.vue'
+import ErrorView from '../components/cart/ErrorView.vue'
 
 export default {
+  data () {
+    return {
+      err : "Votre panier est vide"
+    }
+  },
     components: {
     CartItems,
     CartPayment,
-    BannerView
+    BannerView,
+    ErrorView
 },
   computed: {
     items() {
@@ -37,7 +52,7 @@ export default {
   },
   methods: {
     existOrNo() {
-      if(this.product.lenght <= 0) {
+      if(this.items.lenght <= 0) {
         return true
       } return false
     }
