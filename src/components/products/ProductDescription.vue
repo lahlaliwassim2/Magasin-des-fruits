@@ -11,7 +11,7 @@
             <h3 class="text-center">{{ product.price }} DH</h3>
            <div class="flex">
             <div class="cart-total" v-if="product_total">
-                <h4> Quantitée : {{ product_total }}</h4>
+                <h4> Quantitée : {{ product_total }} Kg</h4>
             </div>
             <div class="prix-final" v-if="product_total">
                 <h4> prix à payer  : {{ SommePrix }}</h4>
@@ -24,9 +24,9 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
-
     props: [
         'product',
         'active'
@@ -56,6 +56,7 @@ export default {
     }
 }
 </script>
+
 <style>
     .drawer-background {
         position: fixed;
@@ -149,7 +150,7 @@ export default {
     }
 
     .remove {
-        color: #ff6961;
+        color:#eb8755;
     }
 
     .add {
