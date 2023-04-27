@@ -1,40 +1,46 @@
 <template>
-<div class="banner animated tada">
- <div class=" big-text animated tada">Magasin</div>
+<div class="banner">
+ <div class=" big-text">Magasin</div>
   <div>de fruits</div>
-  <a href="#">Panier</a>
+  <h3>{{ titre }}</h3>
 </div>
 </template>
+
+<script>
+export default {
+  name : 'BannerView',
+  props: {
+    titre: {
+      type: String,
+      required: true
+    }
+}
+}
+</script>
+
 <style>
 .banner {
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.253) , rgba(0, 0, 0, 0.418)),url(https://thumbs.dreamstime.com/b/vegan-food-banner-fresh-vegetables-fruits-berries-white-wooden-background-free-space-your-text-213191613.jpg);
   background-size: cover;
-  font-size: 80px;
+  font-size: 50px;
   color: #fff;
   text-align: center;
   padding: 40px 15px;
 }
-
 .big-text {
-  font-size: 130px;
+  font-size: 100px;
   font-weight: 800;
   animation-delay: 1s;
 }
-.banner a {
+.banner h3 {
   display: inline-block;
-  background: #fff;
-  color: #36465d;
+  background: #e9e0e0;
+  color: #eb8755;
   text-transform: uppercase;
-  padding: 15px;
+  padding: 10px;
   text-decoration: none;
-  font-size: 40px;
-  transition: 0.3s;
+  font-size: 35px;
+  border-radius: 50%;
 }
-.banner a:hover {
-  background: #333;
-  color: #fff;
-  padding: 15px 20px;
-}
-
 </style>
