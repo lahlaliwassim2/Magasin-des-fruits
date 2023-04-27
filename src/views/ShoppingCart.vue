@@ -1,6 +1,8 @@
 <template>
   <div class="cart ">
-    <h1>My Cart</h1>
+    <BannerView 
+    titre="Mon Panier"
+    />
     <!-- <div v-for="product in items" :key="product.id">
       {{ product.name }}
     </div> -->
@@ -10,26 +12,24 @@
     :key="product.id"
     :product="product"
     />
-    <div class="no_t" :v-if=" existOrNo == true">
-      aucun produit existe dans votre panier
-    </div>body
 </div>
-
     <CartPayment 
       :product="product"
     />
-
   </div>
 </template>
 <script>
+
+import BannerView from '@/components/BannerView.vue';
 import CartItems from '../components/cart/CartItem.vue'
 import CartPayment from '../components/cart/CartPayment.vue'
 
 export default {
     components: {
     CartItems,
-    CartPayment
-    },
+    CartPayment,
+    BannerView
+},
   computed: {
     items() {
       return this.$store.getters.cartItems;
@@ -44,13 +44,18 @@ export default {
   }
 };
 </script>
+
 <style>
-.cartItem {
+.cart {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 10px;
+  flex-direction: column;
 }
-
-
+.cartItem {
+ display: grid;
+ grid-template-columns: repeat(3, 2fr);
+  grid-gap: 54px;
+}
+.titre {
+  font-size: 25px;
+}
 </style>
