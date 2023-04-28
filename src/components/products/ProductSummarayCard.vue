@@ -7,7 +7,7 @@
             <p class="description">{{ description }}</p>
         </div>
     </button> -->
-    <div class="product-card">
+    <div class="product-card" v-show="isLoading">
 		<div class="product-tumb">
 			<img :src="image" alt="image_fruit" style="width:100%;">
             <div class="abs" v-show="PrixHaut">
@@ -24,10 +24,33 @@
 			</div>
 		</div>
 	</div>
+    <div class="product-card" v-show="!isLoading">
+		<div class="product-tumb">
+            chargement ...
+		</div>
+		<div class="product-details">
+          
+			<h4 class="h4">chargement ...</h4>
+			<p></p>
+			<div class="prod-false">
+				<div class="product-price"></div>	
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            isLoading: false
+        }
+    },
+    mounted() {
+    setTimeout(() => {
+      this.isLoading = true;
+    }, 2000);
+  },
     props: ['product'],
     computed: {
         description() {
@@ -70,7 +93,7 @@ export default {
 }
 .abs {
     position: absolute;
-    left: 0;
+    left: 1px;
     top: 5%;
 }
 .product-details h4  {
@@ -96,6 +119,15 @@ export default {
 .product-bottom-details div {
     float: left;
     width: 50%;
+}
+.product-details .h4  {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: #868686;
+    text-decoration: none;
+    transition: 0.3s;
 }
 @media (min-width: 500px) {
     .card {
