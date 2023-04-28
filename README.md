@@ -18,6 +18,7 @@ PAGE QUI AFFICHE LES PRODUITS
 
 AJOUTER DANS MON PANIER 
 
+    La quanititée et le prix ne s'affiche que quand on a au moin un produit reserver 
 
 ![Screenshot 2023-04-27 202405](https://user-images.githubusercontent.com/93933524/234970532-caceaa5c-be88-4252-b34e-5ddfa725102b.png)
 
