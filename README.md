@@ -11,6 +11,8 @@ npm run serve
 
 PAGE QUI AFFICHE LES PRODUITS
 
+    Si le prix est plus de 10 dh l'icon de feu s'affiche 
+
 ![screencapture-localhost-8082-2023-04-27-20_17_54](https://user-images.githubusercontent.com/93933524/234969745-1b5c047f-3077-488b-848a-3feda377c2d8.png)
 
 
