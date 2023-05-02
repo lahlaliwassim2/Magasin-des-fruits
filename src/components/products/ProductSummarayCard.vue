@@ -1,13 +1,11 @@
 <template>
-    <!-- <button class="view-product-button" @click="$emit('view-product', product)">
-        <div class="card ">
-            <h3 class="text-muted bg-gray-600">{{ product.name }}</h3>
-            <img class="card-img" :src="image" alt="">
-            <h5 class="price">Prix est : {{ product.price }}</h5>
-            <p class="description">{{ description }}</p>
+    <div 
+    class="product-card" 
+    v-show="isLoading"  
+    >
+        <div class="quat" v-if="isExist">
+            {{ product_total }} 
         </div>
-    </button> -->
-    <div class="product-card" v-show="isLoading">
 		<div class="product-tumb">
 			<img :src="image" alt="image_fruit" style="width:100%;">
             <div class="abs" v-show="PrixHaut">
@@ -15,12 +13,11 @@
             </div>
 		</div>
 		<div class="product-details">
-          
 			<h4>{{ product.name }}</h4>
 			<p>{{ description }}</p>
 			<div class="product-bottom-details">
 				<div class="product-price">{{ product.price }} dh</div>	
-                <button @click="$emit('view-product', product)">View</button>	
+                <button class="btn"  @click="$emit('view-product', product)">View</button>	
 			</div>
 		</div>
 	</div>
@@ -43,9 +40,11 @@
 export default {
     data() {
         return {
-            isLoading: false
+            isLoading: false,
+            hover: false,
         }
     },
+
     mounted() {
     setTimeout(() => {
       this.isLoading = true;
@@ -62,6 +61,16 @@ export default {
         PrixHaut() {
             if(this.product.price > 10 ) return true
             else return false
+        },
+        product_total() {
+            return this.$store.getters.productQuantity(this.product)
+        },
+        isExist() {
+            if(this.product_total > 0) {
+                return true
+            } else {
+                return false
+            }
         }
     }
 }
@@ -128,6 +137,16 @@ export default {
     color: #868686;
     text-decoration: none;
     transition: 0.3s;
+}
+product-bottom-details .btn {
+    background-color: #fbb72c;
+    padding: 3px;
+    width: 26%;
+}
+.quat{
+    top: -40px;
+    right: 10px;
+    font-size: xx-large;
 }
 @media (min-width: 500px) {
     .card {
