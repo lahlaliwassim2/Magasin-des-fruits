@@ -1,15 +1,13 @@
 <template>
-    <div class="cart-item-card">
-        <div class="header">
-            <img v-bind:src="image" alt="">
-            <h3>{{ product.name }}</h3>
-            <h5>{{ product.quantity }} Kg</h5>
-            <h4>total : {{ item_cost }} Dh</h4>
-        </div>
-        <button @click="remove">
-            Supprimer
-        </button>
+  <el-card class="cart-item-card ">
+    <div class="header">
+      <img :src="image" alt="">
+      <h3>{{ product.name }}</h3>
+      <h5>{{ product.quantity }} Kg</h5>
+      <h4>total : {{ item_cost }} Dh</h4>
     </div>
+    <el-button type="danger" @click="remove">Supprimer</el-button>
+  </el-card>
 </template>
 
 <script>
@@ -43,6 +41,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  margin: 1px;
 }
 
 .cart-item-card .header {
