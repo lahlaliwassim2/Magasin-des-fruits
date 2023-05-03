@@ -1,10 +1,10 @@
 <template>
-  <nav>
+  <el-nav class="navbar">
     <router-link :class="{col: $route.name == 'Home'}" to="/">MAGASIN</router-link> 
     <router-link :class="{col: $route.name == 'Cart'}" to="/cart">
       <i class="bi bi-cart-fill"></i>
     </router-link>
-  </nav>
+  </el-nav>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style>
-nav {
+el-nav {
   padding: 10px;
   width: 99%;
   height: 30px;
