@@ -1,39 +1,35 @@
 <template>
-    <div 
-    class="product-card" 
-    v-show="isLoading"  
-    >
-        <div class="quat" v-if="isExist">
-            {{ product_total }} 
-        </div>
-		<div class="product-tumb">
-			<img :src="image" alt="image_fruit" style="width:100%;">
-            <div class="abs" v-show="PrixHaut">
-                <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/fire.png" style="width: 20px;" alt="">
-            </div>
-		</div>
-		<div class="product-details">
-			<h4>{{ product.name }}</h4>
-			<p>{{ description }}</p>
-			<div class="product-bottom-details">
-				<div class="product-price">{{ product.price }} dh</div>	
-                <button class="btn"  @click="$emit('view-product', product)">View</button>	
-			</div>
-		</div>
-	</div>
-    <div class="product-card" v-show="!isLoading">
-		<div class="product-tumb">
-            chargement ...
-		</div>
-		<div class="product-details">
-          
-			<h4 class="h4">chargement ...</h4>
-			<p></p>
-			<div class="prod-false">
-				<div class="product-price"></div>	
-			</div>
-		</div>
-	</div>
+  <el-card v-show="isLoading" class="product-card">
+    <div v-if="isExist" class="quat">{{ product_total }}</div>
+    <div class="product-tumb">
+      <img :src="image" alt="image_fruit" style="width:100%;" />
+      <el-badge v-show="PrixHaut"  class="abs">
+        <img
+          src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/fire.png"
+          style="width: 20px;"
+          alt=""
+        />
+      </el-badge>
+    </div>
+    <div class="product-details">
+      <h4>{{ product.name }}</h4>
+      <p>{{ description }}</p>
+      <div class="product-bottom-details">
+        <div class="product-price">{{ product.price }} dh</div>
+        <el-button class="btn" @click="$emit('view-product', product)">View</el-button>
+      </div>
+    </div>
+  </el-card>
+  <el-card v-show="!isLoading" class="product-card">
+    <div class="product-tumb">chargement ...</div>
+    <div class="product-details">
+      <h4 class="h4">chargement ...</h4>
+      <p></p>
+      <div class="prod-false">
+        <div class="product-price"></div>
+      </div>
+    </div>
+  </el-card>
 </template>
 
 <script>
@@ -81,16 +77,16 @@ export default {
 .product-card {
     width: 380px;
     position: relative;
-    box-shadow: 0 2px 7px #dfdfdf;
+    box-shadow: 0 2px 7px #ffffff;
     margin: 50px auto;
     background: #fafafa;
 }
 .product-tumb {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column-reverse;
+    justify-content: space-between;
     height: 300px;
-    background: #f0f0f0;
+    background: #ffff;
     position: relative;
 }
 .product-tumb img {
