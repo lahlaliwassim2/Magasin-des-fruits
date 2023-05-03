@@ -1,21 +1,22 @@
 <template>
   <div class="home">
-   <ProductDescription
+   <ProductDescription 
    :product="product"
    :active="active.product_drawer"
-   v-on:close-product-drawer="closeproduct()"
-   />
-    <BannerView 
-     :titre="produits"/>
+   @close-product-drawer="closeproduct()">
+   </ProductDescription>
+    <BannerView  
+     :titre="produits">
+    </BannerView>
     <div class="product-cards-container">
-      <ProductSummarayCard
+      <ProductSummarayCard 
        v-for="product in items"
-      :key="product.id"
-      :product= "product"
-      v-on:view-product="viewProduct($event)"
-       />
+       :key="product.id"
+       :product= "product"
+       @view-product="viewProduct($event)">
+      </ProductSummarayCard>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
