@@ -20,7 +20,7 @@ export default {
   props: ['product'],
   data() {
     return {
-      popoverContent: this.$store.getters.SomePrixTotal/10 + " $",
+      popoverContent: this.$store.getters.SomePrixTotal / 10 + " $",
     };
   },
   computed: {
@@ -47,7 +47,5 @@ export default {
     margin-top: 126px;
   }
 
-  div:first-child {
-    margin-bottom: 10px;
-  }
+
 </style>

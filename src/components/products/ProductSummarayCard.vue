@@ -20,16 +20,24 @@
       </div>
     </div>
   </el-card>
-  <el-card v-show="!isLoading" class="product-card">
-    <div class="product-tumb">chargement ...</div>
-    <div class="product-details">
-      <h4 class="h4">chargement ...</h4>
-      <p></p>
-      <div class="prod-false">
-        <div class="product-price"></div>
+  <el-skeleton v-show="!isLoading" style="width: 240px">
+    <template #template>
+      <el-skeleton-item variant="image" style="width: 240px; height: 240px" />
+      <div style="padding: 14px">
+        <el-skeleton-item variant="p" style="width: 50%" />
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-items: space-between;
+          "
+        >
+          <el-skeleton-item variant="text" style="margin-right: 16px" />
+          <el-skeleton-item variant="text" style="width: 30%" />
+        </div>
       </div>
-    </div>
-  </el-card>
+    </template>
+  </el-skeleton>
 </template>
 
 <script>
