@@ -9,7 +9,7 @@
     <el-button type="danger" @click="remove">Supprimer</el-button>
   </el-card>
 </template>
-
+  
 <script>
 export default {
 
@@ -49,6 +49,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
+  gap: 32px;
 }
 
 .cart-item-card .header img {
